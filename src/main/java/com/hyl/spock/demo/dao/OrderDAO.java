@@ -1,5 +1,7 @@
 package com.hyl.spock.demo.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hyl.spock.demo.entity.OrderDO;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,12 +10,15 @@ import org.springframework.stereotype.Component;
  * @desc the class desc
  */
 @Component
-public class OrderDAO {
+public interface OrderDAO extends BaseMapper<OrderDO> {
 
 
-    public Integer create() {
+    default Integer create() {
         // db...
         return 1;
     }
+
+
+
 
 }

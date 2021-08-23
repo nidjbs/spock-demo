@@ -1,0 +1,1 @@
+INSERT INTO `s_order`(`order_no`,`order_desc`) VALUES ('test','哈哈哈');

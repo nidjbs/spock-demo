@@ -5,10 +5,10 @@ import com.hyl.spock.demo.client.UserClient;
 import com.hyl.spock.demo.dao.OrderDAO;
 import com.hyl.spock.demo.dto.ProductDTO;
 import com.hyl.spock.demo.dto.UserDTO;
+import com.hyl.spock.demo.entity.OrderDO;
 import com.hyl.spock.demo.param.CreateOrderParam;
 import com.hyl.spock.demo.service.OrderService;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
 import javax.annotation.Resource;
 
@@ -47,6 +47,14 @@ public class OrderServiceImpl implements OrderService {
         Integer orderId = orderDAO.create();
         // 扣除库存。。。 todo
         return orderId;
+    }
+
+    @Override
+    public void updateOrder(Integer orderId, String orderNo) {
+        OrderDO orderDO = new OrderDO();
+        orderDO.setId(orderId);
+        orderDO.setOrderNo(orderNo);
+        orderDAO.updateById(orderDO);
     }
 
 

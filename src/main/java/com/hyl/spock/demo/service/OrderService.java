@@ -11,4 +11,7 @@ public interface OrderService {
 
     public Integer createOrder(CreateOrderParam param);
 
+    public void updateOrder(Integer orderId,String orderNo);
+
+
 }
